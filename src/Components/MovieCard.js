@@ -2,14 +2,18 @@ import React from "react";
 import { useState } from 'react'
 import Comments from './Comments'
 
-function MovieCard() {
+function MovieCard({ movie }) {
   const [comments, setComments] = useState([])
+
+  const {id, title, description, genre, image} = movie;
+
   return (
     <div>
-      <h3>Title</h3>
-      <p>Genre</p>
+      {/* <img  src={image} alt={title}/> */}
+      <h3>{title}</h3>
+      <p>{genre}</p>
       <p>
-        <strong>Description</strong>
+        <strong>{description}</strong>
       </p>
       <button>Mark as watched</button>
       <Comments comments={comments} setComments={setComments}/>
